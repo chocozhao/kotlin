@@ -197,6 +197,7 @@ private fun checkFailedAssertion(assertion: () -> Unit) {
     assertFailsWith<AssertionError> { withDefaultAsserter(assertion) }
 }
 
+@Suppress("INVISIBLE_MEMBER")
 private fun withDefaultAsserter(block: () -> Unit) {
     val current = overrideAsserter(DefaultAsserter)
     try {
